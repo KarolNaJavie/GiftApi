@@ -16,8 +16,6 @@ public class CreateGiftCommand {
     private String name;
     @NotNull(message = "NULL_VALUE")
     private double price;
-    @NotNull(message = "NULL_VALUE")
-    private Long kidId;
 
     public Gift toEntity() {
         return Gift.builder()

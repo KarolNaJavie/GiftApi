@@ -1,9 +1,6 @@
 package com.example.giftApi.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -20,7 +17,7 @@ public class Kid {
     //imię, nazwisko, data urodzenia
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -28,5 +25,4 @@ public class Kid {
     private boolean deleted = false;
     @OneToMany(mappedBy = "kid")
     private Set<Gift> gifts;
-    private Integer gifstNumber = 0;
 }
